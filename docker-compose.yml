@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./:/app  # Mount local folder inside the container
+      - /app/node_modules  # Avoid overwriting node_modules
+    ports:
+      - "3000:3000"
+    command: npm run start:dev  # Run NestJS in watch mode
+    # env_file:
+    #   - ./.env
+    restart: unless-stopped
