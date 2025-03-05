@@ -20,7 +20,7 @@ function demo() {
         // "stream": false
     }, {
         headers: {
-            Authorization: "Bearer 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"
+            Authorization: "Bearer "
         }
     }).then(d => {
         console.log(d.data)
